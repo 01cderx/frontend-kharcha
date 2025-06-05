@@ -53,7 +53,7 @@ export const GlobalProvider = ({ children }) => {
       } catch (err) {
         dispatch({
           type: 'TRANSACTION_ERROR',
-          payload: err.response.data.error
+          payload: err.response.data.error || "Server error"
         })
       }
       
@@ -74,7 +74,7 @@ export const GlobalProvider = ({ children }) => {
        } catch (err) {
         dispatch({
           type: 'TRANSACTION_ERROR',
-          payload: err.response.data.error
+          payload: err.response.data.error || "Server error"
         })
        }
        
