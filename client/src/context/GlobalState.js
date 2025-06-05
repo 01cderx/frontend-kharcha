@@ -28,7 +28,7 @@ export const GlobalProvider = ({ children }) => {
     // Actions
   async function getTransactions() {
     try {
-      const res = await axios.get('/api/v1/transactions');
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/transactions`);
 
       dispatch({
         type: 'GET_TRANSACTIONS',
