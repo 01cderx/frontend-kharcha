@@ -44,7 +44,7 @@ export const GlobalProvider = ({ children }) => {
 
     async function deleteTransaction(id) {
       try {
-        await axios.delete(`/api/v1/transactions/${id}`);
+        await axios.delete(`${process.env.REACT_APP_API_URL}/api/v1/transactions/${id}`);
         dispatch({
           type: 'DELETE_TRANSACTION',
           payload: id 
@@ -65,7 +65,7 @@ export const GlobalProvider = ({ children }) => {
         }
       }
        try {
-        const res = await axios.post('/api/v1/transactions', transaction, config);
+        const res = await axios.post('${process.env.REACT_APP_API_URL}/api/v1/transactions', transaction, config);
         dispatch({
           type: 'ADD_TRANSACTION',
           payload: res.data.data
